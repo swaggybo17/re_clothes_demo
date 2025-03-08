@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* 导航栏样式 */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.main-nav a:hover {
+    color: #666;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+/* Logo链接样式 */
+.logo h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 当前页面导航链接样式 */
+.main-nav a.active {
+    border-bottom: 2px solid #1a1a1a;
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url('https://picsum.photos/1920/1080?random=10');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content {
+    padding: 2rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    color: #1a1a1a;
+    text-decoration: none;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* 分类导航 */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.category-btn.active {
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.category-btn:hover {
+    color: #666;
+}
+
+/* 商品网格 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.02);
+}
+
+.item-details {
+    padding: 1rem 0;
+}
+
+.item-details h3 {
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.item-details p {
+    color: #666;
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.95);
+}
+
+.modal-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    position: relative;
+    background: #fff;
+    padding: 2rem;
+}
+
+.modal-content img {
+    max-width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 2rem;
+    width: 40%;
+}
+
+.product-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.size-selector {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.size-selector button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: none;
+    cursor: pointer;
+}
+
+.size-selector button:hover {
+    border-color: #1a1a1a;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.add-to-cart:hover {
+    background-color: #333;
+}
+
+.close-button {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #1a1a1a;
+}
+
+/* 页脚样式 */
+footer {
+    margin-top: 4rem;
+    background-color: #f8f8f8;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a:hover {
+    color: #1a1a1a;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+/* 分类卡片样式 */
+.featured-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.category-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: #fff;
+    text-align: center;
+}
+
+.category-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #fff;
+    color: #1a1a1a;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.category-link:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* 热门单品部分 */
+.trending {
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-nav {
+        padding: 1rem;
+    }
+
+    .nav-left, .nav-right {
+        gap: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .modal-content img {
+        max-width: 100%;
+    }
+
+    .product-details {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .gallery {
+        padding: 0 1rem;
+    }
+
+    .featured-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .category-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+} 
